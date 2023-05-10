@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    min-height: 100vh;
+    background: #e3f2fd; ;
+}
+body, .video-controls, .video-timer, .options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    max-width: 900px;
+    position: relative;
+    width: 98%;
+    background: #000;
+    border-radius:5px ;
+    overflow: hidden;
+}
+.container.fullscreen{
+    max-width: 100%;
+    height: 100%;
+}
+.wrapper{
+    position: absolute;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+    z-index: 1;
+}
+.wrapper::before{
+    content: "";
+    bottom: 0;
+    background: #000;
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    height: calc(100% + 35px);
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+.video-timeline{
+    height: 7px;
+    width: 100%;
+}
+.video-timeline .progress-area{
+    background: rgba(255, 255, 255, 0.6);
+    height: 3px;
+    position: relative;
+    cursor: pointer;
+}
+.progress-area span{
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    font-size: 13px;
+    color: #fff;
+    transform: translateX (-50%);
+}
+.progress-area .progress-bar{
+    width: 0%;
+    height: 100%;
+    background: #2289ff;
+    position: relative;
+}
+.progress-area .progress-bar::before{
+    content: "";
+    right: 0;
+    top: 50%;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: inherit;
+    position: absolute;
+    transform: translateY(-50%);
+}
+.progress-area span, .progress-area .progress-bar::before{
+    display: none;
+}
+.video-controls .options{
+    width: 100%;
+}
+.video-controls .options:last-child{
+    justify-content: flex-end;
+}
+.video-controls .options:first-child{
+    justify-content: flex-start;
+}
+.video-timeline:hover .progress-area span,
+.video-timeline:hover .progress-area .progress-bar::before{
+    display: block;
+}
+.video-controls{
+    padding: 5px 20px 10px;
+}
+.options button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 19px;
+    background: none;
+}
+.options button :where(i, span){
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+}
+.options input{
+    height: 4px;
+    max-width: 75px;
+}
+.options .video-timer{
+    font-size: 14px;
+    margin-left: 15px;
+    color: #efefef
+}
+.video-timer .separator{
+    margin: 0 5px;
+    font-size: 16px;
+}
+ .playback-content{
+    position: relative;
+ }
+ .playback-content .speed-options{
+    position: absolute;
+    width: 95px;
+    bottom: 40px;
+    left: -40px;
+    opacity: 0;
+    pointer-events: none;
+    list-style: none; 
+    background: #fff;
+    border-radius: 4px;
+    transition: opacity 0.13s ease;
+}
+.playback-content .speed-options.show{
+    opacity: 1;
+    pointer-events: auto;  
+}
+.speed-options li{
+    padding: 5px 0 5px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.speed-options li.active{
+    background: #2289ff;
+    color: #fff;
+}
+.container video{
+    width: 100%;
+}
