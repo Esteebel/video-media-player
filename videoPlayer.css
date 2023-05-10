@@ -18,7 +18,7 @@ body, .video-controls, .video-timer, .options{
     position: relative;
     width: 98%;
     background: #000;
-    border-radius:5px ;
+    border-radius:6px ;
     overflow: hidden;
 }
 .container.fullscreen{
