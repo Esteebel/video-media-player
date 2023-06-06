@@ -13,7 +13,7 @@ const container = document.querySelector(".container"),
  picInPicBtn= container.querySelector(".pic-in-pic span")
  fullScreenBtn= container.querySelector(".fullscreen i"),
  playPauseBtn = container.querySelector(".play-pause i");
-
+console.log(12345);
 
 const formatTime = time => {
    //getting time in sec, minute, and hour
