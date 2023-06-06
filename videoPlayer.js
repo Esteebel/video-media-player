@@ -14,7 +14,7 @@ const container = document.querySelector(".container"),
  fullScreenBtn= container.querySelector(".fullscreen i"),
  playPauseBtn = container.querySelector(".play-pause i");
 console.log(12345);
-
+let b = 'Omo i dey see shege'
 
 const formatTime = time => {
    let a = true
