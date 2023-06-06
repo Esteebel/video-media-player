@@ -13,11 +13,9 @@ const container = document.querySelector(".container"),
  picInPicBtn= container.querySelector(".pic-in-pic span")
  fullScreenBtn= container.querySelector(".fullscreen i"),
  playPauseBtn = container.querySelector(".play-pause i");
-console.log(12345);
 
 
 const formatTime = time => {
-   let a = true
    //getting time in sec, minute, and hour
    let seconds = Math.floor(time % 60),
    minutes =  Math.floor(time / 60) % 60,
